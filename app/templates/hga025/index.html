@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+ <title> hga025</title>
+<style>
+ .footer {
+
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
+    position: fixed;
+    font-size: 18px;
+    text-align: center;
+    left: 0px
+}
+</style>
+</head>
+<body>
+<div class="RE">当前滚球 </br>
+
+      <ul>
+          <li><a class="1" href="/api/hga025/?FStype=FT&rtype=re&isfuture=False">足球</a></li>
+          <li><a class="2" href="/api/hga025/?FStype=OP&rtype=re&isfuture=False">其他体育</a></li>
+          <li><a class="3" href="/api/hga025/?FStype=VB&rtype=re&isfuture=False">排球</a></li>
+          <li><a class="4" href="/api/hga025/?FStype=TT&rtype=re&isfuture=False">乒乓球</a></li>
+          <li><a class="4" href="/api/hga025/?FStype=BK&rtype=re&isfuture=False">篮球&美式足球</a></li>
+
+     </ul>
+
+    </div>
+    <div class="FT">足球 </br>
+
+      <button onclick="soccer()">今日 </button> <button onclick="soccer('True')">早盘</button>
+      <ul>
+          <li ><a id="1" href="/api/hga025/?FStype=Soccer&rtype=r&isfuture=False">全部玩法</a></li>
+          <li><a id="2" href="/api/hga025/?FStype=SoccerSingle&rtype=pd&isfuture=False">全场波胆</a></li>
+          <li><a id="3" href="/api/hga025/?FStype=SoccerSingle&rtype=hpd&isfuture=False">上全场波胆</a></li>
+          <li><a id="4" href="/api/hga025/?FStype=SoccerSingle&rtype=f&isfuture=False">半场/全场</a></li>
+          <li><a id="5" href="/api/hga025/?FStype=SoccerSingle&rtype=t&isfuture=False">总入球</a></li>
+          <li><a id="6" href="/api/hga025/?FStype=SoccerSingle&rtype=fs&isfuture=True">冠军</a></li>
+     </ul>
+
+    </div>
+        <div class="VB">排球 </br>
+
+      <button onclick="vb()">今日 </button> <button onclick="vb('True')">早盘</button>
+      <ul>
+          <li ><a id="14" href="/api/hga025/?FStype=VB&rtype=r&isfuture=False">赛事</a></li>
+          <li ><a id="15" href="/api/hga025/?FStype=VB&rtype=fs&isfuture=False">冠军</a></li>
+     </ul>
+     </div>
+    <div class="TT">兵乓球 </br>
+
+      <button onclick="table()">今日 </button> <button onclick="table('True')">早盘</button>
+      <ul>
+          <li ><a id="7" href="/api/hga025/?FStype=TT&rtype=r&isfuture=False">赛事</a></li>
+          <li ><a id="8" href="/api/hga025/?FStype=TT&rtype=fs&isfuture=False">冠军</a></li>
+     </ul>
+     </div>
+
+    <div class="OP">其他体育</br>
+
+      <button onclick="other()">今日 </button> <button onclick="other('True')">早盘</button>
+      <ul>
+          <li ><a id="9" href="/api/hga025/?FStype=OP&rtype=r&isfuture=False">赛事</a></li>
+          <li ><a id="10" href="/api/hga025/?FStype=OP&rtype=fs&isfuture=False">冠军</a></li>
+     </ul>
+
+     </div>
+
+    <div class="TG">综合过关</br>
+
+      <ul>
+          <li ><a id="11" href="/api/hga025/?FStype=FT&rtype=p3&isfuture=False">足球</a></li>
+          <li ><a id="12" href="/api/hga025/?FStype=OP&rtype=p3&isfuture=False">其他体育</a></li>
+          <li ><a id="13" href="/api/hga025/?FStype=VB&rtype=p3&isfuture=False">排球</a></li>
+     </ul>
+
+     </div>
+<script>
+
+function soccer(isfuture='False'){
+        doc = document.getElementById('1');
+        doc.setAttribute("href",`/api/hga025/?FStype=Soccer&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('2');
+        doc.setAttribute("href",`/api/hga025/?FStype=SoccerSingle&rtype=pd&isfuture=${isfuture}`);
+        doc = document.getElementById('3');
+        doc.setAttribute("href",`/api/hga025/?FStype=SoccerSingle&rtype=hpd&isfuture=${isfuture}`);
+        doc = document.getElementById('4');
+        doc.setAttribute("href",`/api/hga025/?FStype=SoccerSingle&rtype=f&isfuture=${isfuture}`);
+        doc = document.getElementById('5');
+        doc.setAttribute("href",`/api/hga025/?FStype=SoccerSingle&rtype=t&isfuture=${isfuture}`);
+        doc = document.getElementById('6');
+        doc.setAttribute("href",`/api/hga025/?FStype=SoccerSingle&rtype=fs&isfuture=${isfuture}`);
+}
+function vb(isfuture='False'){
+        doc = document.getElementById('14');
+        doc.setAttribute("href",`/api/hga025/?FStype=VB&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('15');
+        doc.setAttribute("href",`/api/hga025/?FStype=VB&rtype=fs&isfuture=${isfuture}`);
+
+}
+function table(isfuture='False'){
+        doc = document.getElementById('7');
+        doc.setAttribute("href",`/api/hga025/?FStype=TT&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('8');
+        doc.setAttribute("href",`/api/hga025/?FStype=TT&rtype=fs&isfuture=${isfuture}`);
+
+}
+function other(isfuture='False'){
+        doc = document.getElementById('9');
+        doc.setAttribute("href",`/api/hga025/?FStype=OP&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('10');
+        doc.setAttribute("href",`/api/hga025/?FStype=OP&rtype=fs&isfuture=${isfuture}`);
+
+}
+
+function tg(isfuture='False'){
+        doc = document.getElementById('9');
+        doc.setAttribute("href",`/api/hga025/?FStype=OP&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('10');
+        doc.setAttribute("href",`/api/hga025/?FStype=OP&rtype=fs&isfuture=${isfuture}`);
+
+}
+</script>
+<!--<footer class="footer">Powered by nginx(1.14.0) on ubuntu</footer> -->
+</body>
+</html>
