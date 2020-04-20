@@ -1,61 +1,21 @@
 from flask import Blueprint,request,render_template,redirect,jsonify,url_for,session
 
 
-from flask import Flask,make_response
+from flask import Flask,make_response,Response
 import gzip
 import json
 from datetime import timedelta
 import datetime
 from db_mongo import db
+from response import hga025_response,pinnacle_response
+app = Flask(__name__)
 
-
-class CJsonEncoder(json.JSONEncoder):
-
-    def default(self, obj):
-        if isinstance(obj, datetime.datetime):
-            return obj.strftime('%Y-%m-%d %H:%M:%S')
-        else:
-            return json.JSONEncoder.default(self, obj)
 class Config(object):
     DEBUG = True
     SECRET_KEY = "mofofei"
     SEND_FILE_MAX_AGE_DEFAULT = timedelta(seconds=1)
-
-def hga025_response(col,rtype,isfuture):
-    print(col,rtype,isfuture)
-    if rtype == 'p3':
-        collect = db['hga025']['P3']
-        delay = datetime.datetime.now() - datetime.timedelta(hours=1)
-        mongo_result = collect.find({'FStype': col,'startTime': {'$gt': delay}}, {"_id": 0})
-        text = json.dumps(list(mongo_result), cls=CJsonEncoder)
-        text = gzip.compress(text.encode('utf-8'))
-        response = make_response(text)
-        response.headers['Content-Encoding'] = 'gzip'
-        response.headers['Content-Type'] = 'application/json'
-        return response
-    elif rtype == 're':
-        collect = db['hga025']['RE']
-        delay = datetime.datetime.now() - datetime.timedelta(hours=1)
-        mongo_result = collect.find({'FStype': col, 'startTime': {'$gt': delay}}, {"_id": 0})
-        text = json.dumps(list(mongo_result), cls=CJsonEncoder)
-        text = gzip.compress(text.encode('utf-8'))
-        response = make_response(text)
-        response.headers['Content-Encoding'] = 'gzip'
-        response.headers['Content-Type'] = 'application/json'
-        return response
-
-    else:
-        collect = db['hga025'][col]
-        delay = datetime.datetime.now() - datetime.timedelta(hours=1)
-        mongo_result = collect.find({'rtype': rtype,'isfuture': isfuture, 'startTime': {'$gt': delay}}, {"_id": 0})
-        text = json.dumps(list(mongo_result), cls=CJsonEncoder)
-        text = gzip.compress(text.encode('utf-8'))
-        response = make_response(text)
-        response.headers['Content-Encoding'] = 'gzip'
-        response.headers['Content-Type'] = 'application/json'
-        return response
-app = Flask(__name__)
 app.config.from_object( Config )
+
 
 @app.route('/')
 def index():
@@ -81,18 +41,11 @@ def index_hga025():
     reponse = make_response(rep)
     return reponse
 
-@app.route('/api/hkjc/<string:collection>')
-def api_hkjc(collection):
+@app.route('/api/hkjc/')
+def api_hkjc():
 
-    collect = db['hkjc'][collection]
-    delay = datetime.datetime.now() - datetime.timedelta(hours=1)
-    mongo_result = collect.find({'startTime': {'$gt': delay}}, {"_id": 0})
-    text = json.dumps(list(mongo_result),cls=CJsonEncoder)
-    text =  gzip.compress(text.encode('utf-8'))
-    response = make_response(text)
-    response.headers['Content-Encoding'] = 'gzip'
-    response.headers['Content-Type']='application/json'
-    return response
+
+    return jsonify([])
 
 @app.route('/api/hga025/')
 def api_hga025():
@@ -105,17 +58,10 @@ def api_hga025():
     return response
 
 
-@app.route('/api/pinnacle/<string:collection>')
-def api_pinnacle(collection):
+@app.route('/api/pinnacle/')
+def api_pinnacle():
 
-    collect = db['pinnacle'][collection]
-    delay = datetime.datetime.now() - datetime.timedelta(hours=1)
-    mongo_result = collect.find({'updateTime':{'$gt':delay}},{"_id": 0})
-    text = json.dumps(list(mongo_result),cls=CJsonEncoder)
-    text =  gzip.compress(text.encode('utf-8'))
-    response = make_response(text)
-    response.headers['Content-Encoding'] = 'gzip'
-    response.headers['Content-Type']='application/json'
+    response = pinnacle_response()
     return response
 
 if __name__ == '__main__':

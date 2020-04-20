@@ -1,8 +1,0 @@
-function future(){
-    alert('hello')
-}
-
-
-			
-
-
