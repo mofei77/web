@@ -8,6 +8,7 @@ from datetime import timedelta
 import datetime
 from db_mongo import db
 from response import hga025_response,pinnacle_response
+from captcha import getcaptcha,str
 app = Flask(__name__)
 
 class Config(object):
@@ -50,13 +51,8 @@ def api_hkjc():
 @app.route('/api/hga025/')
 def api_hga025():
 
-    col  = request.args.get('FStype')
-    rtype = request.args.get('rtype')
-    isfuture = eval(request.args.get('isfuture'))
-    response = hga025_response(col,rtype,isfuture)
-
+    response =  hga025_response()
     return response
-
 
 @app.route('/api/pinnacle/')
 def api_pinnacle():
@@ -64,5 +60,46 @@ def api_pinnacle():
     response = pinnacle_response()
     return response
 
+@app.route('/api/hga025/markets/')
+def hga025_matchinfo():
+
+    col = request.args.get('FStype')
+    matchid = int(request.args.get('matchid'))
+    response =db['hga025'][col].find({'matchid': int(matchid)},{'_id':0})
+    return jsonify(list(response))
+
+@app.route('/api/pinnacle/markets/')
+def pinnacle_matchinfo():
+
+    col = request.args.get('gtype')
+    matchid = int(request.args.get('matchid'))
+    response =db['pinnacle'][col].find({'$or':[{'matchid': int(matchid)},{'parentid':int(matchid)}]},{'_id':0})
+    return jsonify(list(response))
+
+
+@app.route('/captcha/')
+def generate_captcha():
+    s = str()
+    r = getcaptcha(s)
+    session['text'] = s
+    response = make_response(r)
+    response.headers['content-type']= 'image/JPEG'
+    return response
+@app.route('/check/',methods=['POST'])
+def check_captcha():
+    if request.method == 'POST':
+
+        text = request.form['text']
+        if text == session['text']:
+            response = make_response('ok')
+            response.headers['Content-Type'] = 'text/javascript'
+            return response
+        else:
+            response = make_response('error')
+            response.headers['Content-Type'] = 'text/javascript'
+            return response
+    else:
+        return '403'
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1',port=80)
+    app.run(host='192.168.2.27',port=80)

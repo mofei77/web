@@ -24,7 +24,15 @@
 <body>
 <div id="example">
 <div class="RE">当前滚球 </br>
+    <form action="/api/hga025/markets/" method="get" target="_blank">
 
+
+            请输入FStype和matchid可查询对应数据
+            <span>FStype: <input type="text" name="FStype" /></span>
+            <span>matchid:<input type="text" name="matchid"/></span>
+
+        <input type="submit" value="提交">
+    </form>
       <ul>
           <li><a class="1" href="/api/hga025/?FStype=FT&rtype=re&isfuture=False">足球(<span id="a">0</span>)</a></li>
           <li><a class="2" href="/api/hga025/?FStype=OP&rtype=re&isfuture=False">其他体育(<span id="b">0</span>)</a></li>
@@ -39,7 +47,7 @@
 
       <button onclick="soccer()">今日 </button> <button onclick="soccer('True')">早盘</button>
       <ul>
-          <li ><a id="1" href="/api/hga025/?FStype=Soccer&rtype=r&isfuture=False">全部玩法</a></li>
+          <li ><a id="1" href="/api/hga025/?FStype=Soccer&rtype=r&isfuture=False">独赢 & 让球 & 大小</a></li>
           <li><a id="2" href="/api/hga025/?FStype=SoccerSingle&rtype=pd&isfuture=False">全场波胆</a></li>
           <li><a id="3" href="/api/hga025/?FStype=SoccerSingle&rtype=hpd&isfuture=False">上全场波胆</a></li>
           <li><a id="4" href="/api/hga025/?FStype=SoccerSingle&rtype=f&isfuture=False">半场/全场</a></li>
@@ -65,6 +73,7 @@
      </ul>
      </div>
 
+
     <div class="OP">其他体育</br>
 
       <button onclick="other()">今日 </button> <button onclick="other('True')">早盘</button>
@@ -85,6 +94,22 @@
 
      </div>
     </div>
+    <div class="BS">棒球 </br>
+
+      <button onclick="baseball()">今日 </button> <button onclick="baseball('True')">早盘</button>
+      <ul>
+          <li ><a id="16" href="/api/hga025/?FStype=BS&rtype=r&isfuture=False">赛事</a></li>
+          <li ><a id="17" href="/api/hga025/?FStype=BS&rtype=fs&isfuture=False">冠军</a></li>
+     </ul>
+     </div>
+    <div class="TN">网球 </br>
+
+      <button onclick="tn()">今日 </button> <button onclick="tn('True')">早盘</button>
+      <ul>
+          <li ><a id="18" href="/api/hga025/?FStype=TN&rtype=r&isfuture=False">赛事</a></li>
+          <li ><a id="19" href="/api/hga025/?FStype=TN&rtype=fs&isfuture=False">冠军</a></li>
+     </ul>
+     </div>
 <script>
 
 function soccer(isfuture='False'){
@@ -113,6 +138,19 @@ function table(isfuture='False'){
         doc.setAttribute("href",`/api/hga025/?FStype=TT&rtype=r&isfuture=${isfuture}`);
         doc = document.getElementById('8');
         doc.setAttribute("href",`/api/hga025/?FStype=TT&rtype=fs&isfuture=${isfuture}`);
+
+}
+function baseball(isfuture='False'){
+        doc = document.getElementById('16');
+        doc.setAttribute("href",`/api/hga025/?FStype=BS&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('17');
+        doc.setAttribute("href",`/api/hga025/?FStype=BS&rtype=fs&isfuture=${isfuture}`);
+}
+function tn(isfuture='False'){
+        doc = document.getElementById('18');
+        doc.setAttribute("href",`/api/hga025/?FStype=BS&rtype=r&isfuture=${isfuture}`);
+        doc = document.getElementById('19');
+        doc.setAttribute("href",`/api/hga025/?FStype=BS&rtype=fs&isfuture=${isfuture}`);
 
 }
 function other(isfuture='False'){

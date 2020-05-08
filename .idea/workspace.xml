@@ -5,8 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db_mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db_mongo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/myapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/myapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/response.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/hga025/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/hga025/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/hkjc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/hkjc/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/pinnacle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pinnacle/index.html" afterDir="false" />
     </list>
@@ -43,6 +44,27 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Python.myapp (1)">
+    <configuration name="captcha" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/captcha.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="db_mongo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -56,6 +78,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/db_mongo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fetch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/fetch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,55 +191,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="setting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="web" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setting.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_flask (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="web" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/test_flask.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.myapp (1)" />
-        <item itemvalue="Python.response" />
         <item itemvalue="Python.db_mongo" />
-        <item itemvalue="Python.setting" />
-        <item itemvalue="Python.test_flask (1)" />
+        <item itemvalue="Python.fetch" />
+        <item itemvalue="Python.captcha" />
+        <item itemvalue="Python.response" />
       </list>
     </recent_temporary>
   </component>
@@ -226,49 +227,45 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="493" y="174" key="FileChooserDialogImpl" timestamp="1586928866183">
+    <state x="493" y="174" key="FileChooserDialogImpl" timestamp="1588216681388">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state x="493" y="174" key="FileChooserDialogImpl/0.0.1549.831@0.0.1549.831" timestamp="1586928866183" />
-    <state width="1506" height="256" key="GridCell.Tab.0.bottom" timestamp="1587356754756">
+    <state x="493" y="174" key="FileChooserDialogImpl/0.0.1549.831@0.0.1549.831" timestamp="1588216681388" />
+    <state width="1506" height="244" key="GridCell.Tab.0.bottom" timestamp="1588938148470">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1506" height="256" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1587356754756" />
-    <state width="1506" height="256" key="GridCell.Tab.0.center" timestamp="1587356754756">
+    <state width="1506" height="244" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1588938148470" />
+    <state width="1506" height="244" key="GridCell.Tab.0.center" timestamp="1588938148470">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1506" height="256" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1587356754756" />
-    <state width="1506" height="256" key="GridCell.Tab.0.left" timestamp="1587356754756">
+    <state width="1506" height="244" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1588938148470" />
+    <state width="1506" height="244" key="GridCell.Tab.0.left" timestamp="1588938148470">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1506" height="256" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1587356754756" />
-    <state width="1506" height="256" key="GridCell.Tab.0.right" timestamp="1587356754756">
+    <state width="1506" height="244" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1588938148470" />
+    <state width="1506" height="244" key="GridCell.Tab.0.right" timestamp="1588938148470">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1506" height="256" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1587356754756" />
-    <state width="1186" height="245" key="GridCell.Tab.1.bottom" timestamp="1579155033534">
+    <state width="1506" height="244" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1588938148470" />
+    <state width="1286" height="250" key="GridCell.Tab.1.bottom" timestamp="1587868730737">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1186" height="245" key="GridCell.Tab.1.bottom/0.0.1549.831@0.0.1549.831" timestamp="1579155033534" />
-    <state width="1186" height="245" key="GridCell.Tab.1.center" timestamp="1579155033533">
+    <state width="1286" height="250" key="GridCell.Tab.1.bottom/0.0.1549.831@0.0.1549.831" timestamp="1587868730737" />
+    <state width="1286" height="250" key="GridCell.Tab.1.center" timestamp="1587868730737">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1186" height="245" key="GridCell.Tab.1.center/0.0.1549.831@0.0.1549.831" timestamp="1579155033533" />
-    <state width="1186" height="245" key="GridCell.Tab.1.left" timestamp="1579155033533">
+    <state width="1286" height="250" key="GridCell.Tab.1.center/0.0.1549.831@0.0.1549.831" timestamp="1587868730737" />
+    <state width="1286" height="250" key="GridCell.Tab.1.left" timestamp="1587868730737">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1186" height="245" key="GridCell.Tab.1.left/0.0.1549.831@0.0.1549.831" timestamp="1579155033533" />
-    <state width="1186" height="245" key="GridCell.Tab.1.right" timestamp="1579155033533">
+    <state width="1286" height="250" key="GridCell.Tab.1.left/0.0.1549.831@0.0.1549.831" timestamp="1587868730737" />
+    <state width="1286" height="250" key="GridCell.Tab.1.right" timestamp="1587868730737">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="1186" height="245" key="GridCell.Tab.1.right/0.0.1549.831@0.0.1549.831" timestamp="1579155033533" />
+    <state width="1286" height="250" key="GridCell.Tab.1.right/0.0.1549.831@0.0.1549.831" timestamp="1587868730737" />
     <state x="223" y="0" width="977" height="831" key="SettingsEditor" timestamp="1586917738124">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
     <state x="223" y="0" width="977" height="831" key="SettingsEditor/0.0.1549.831@0.0.1549.831" timestamp="1586917738124" />
-    <state x="513" y="152" width="672" height="678" key="search.everywhere.popup" timestamp="1578999206098">
-      <screen x="0" y="0" width="1549" height="831" />
-    </state>
-    <state x="513" y="152" width="672" height="678" key="search.everywhere.popup/0.0.1549.831@0.0.1549.831" timestamp="1578999206098" />
   </component>
 </project>

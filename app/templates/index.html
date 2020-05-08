@@ -8,7 +8,6 @@
     <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
     </script>
-    <script type="text/javascript" src="/static/js/request.js"></script>
 
     <link rel="stylesheet"  type="text/css" href="/static/css/1.css" />
 	
@@ -28,15 +27,23 @@
 </head>
 <body>
 
+    <form action="/check/" method="POST" target="_blank">
+        <span><img src="/captcha/"></span> </br>
+        <span>
+            请输入验证码:
+            <input type="text" name="text"/>
+        </span></br>
+        <input type="submit" value="提交">
+    </form>
+    <iframe  name="stop" style="display:none;"></iframe>
     <ul class="site">
         <li><a href="/hkjc/">香港马会</a></li>
         <li><a href="/pinnacle/">平博</a></li>
         <li><a href="/hga025/">w849.hga025.com</a></li>
-        <li><a href="/hkjc/">香港马会</a></li>
         <li><a href="http://107.167.177.248:5002">威廉希尔</a></li>
         <li><a href="http://107.167.177.248:5001?Authorization=Basic YWRtaW46YWRtaW4=">macau</a></li>
-
     </ul>
 <footer class="footer">Powered by nginx(1.14.0) on ubuntu</footer>
+
 </body>
 </html>
